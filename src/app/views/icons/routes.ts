@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Icons'
+      title: 'Relatórios'
     },
     children: [
       {
@@ -16,7 +16,7 @@ export const routes: Routes = [
         path: 'coreui-icons',
         loadComponent: () => import('./coreui-icons.component').then(m => m.CoreUIIconsComponent),
         data: {
-          title: 'CoreUI Icons'
+          title: 'Emissão'
         }
       },
       {

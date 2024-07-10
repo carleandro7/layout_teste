@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Forms'
+      title: 'Alunos'
     },
     children: [
       {
@@ -16,14 +16,14 @@ export const routes: Routes = [
         path: 'form-control',
         loadComponent: () => import('./form-controls/form-controls.component').then(m => m.FormControlsComponent),
         data: {
-          title: 'Form Control'
+          title: 'Cadastro'
         }
       },
       {
         path: 'select',
         loadComponent: () => import('./select/select.component').then(m => m.SelectComponent),
         data: {
-          title: 'Select'
+          title: 'Listagem'
         }
       },
       {

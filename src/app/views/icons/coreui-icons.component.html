@@ -1,16 +1,49 @@
-<c-card>
-  <c-card-header>
-    {{ title }}
-    <app-docs-link href="https://github.com/coreui/coreui-icons" text="GitHub" />
-  </c-card-header>
-  <c-card-body>
-    <c-row class="text-center">
-      @for (icon of icons; track icon[0]) {
-        <c-col class="mb-5" [md]="3" [sm]="4" [xl]="2" [xs]="6">
-          <svg cIcon [name]="icon[0]" [title]="icon[0]" size="3xl"></svg>
-          <div>{{ toKebabCase(icon[0]) }}</div>
-        </c-col>
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Emissão de Relatórios</strong>
+      </c-card-header>
+      <c-card-body>
+        <form cForm (ngSubmit)="gerarRelatorio()">
+          <div class="mb-3">
+            <label cLabel for="dataInicio">Data de Início</label>
+            <input cFormControl id="dataInicio" [(ngModel)]="dataInicio" name="dataInicio" type="date" required />
+          </div>
+          <div class="mb-3">
+            <label cLabel for="dataFim">Data de Fim</label>
+            <input cFormControl id="dataFim" [(ngModel)]="dataFim" name="dataFim" type="date" required />
+          </div>
+          <div class="mb-3">
+            <label cLabel for="tipoRelatorio">Tipo de Relatório</label>
+            <select cFormControl id="tipoRelatorio" [(ngModel)]="tipoRelatorio" name="tipoRelatorio" required>
+              <option value="financeiro">Financeiro</option>
+              <option value="operacional">Operacional</option>
+              <option value="comercial">Comercial</option>
+            </select>
+          </div>
+          <button cButton class="mb-3" type="submit">Gerar Relatório</button>
+        </form>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Resultado do Relatório</strong>
+      </c-card-header>
+      @if (relatorioGerado) {
+
+        <c-card-body>
+          <p><strong>Data de Início:</strong> {{dataInicio}}</p>
+          <p><strong>Data de Fim:</strong> {{dataFim}}</p>
+          <p><strong>Tipo de Relatório:</strong> {{tipoRelatorio}}</p>
+          <div>
+            <p><strong>Conteúdo do Relatório:</strong></p>
+            <pre>{{conteudoRelatorio}}</pre>
+          </div>
+        </c-card-body>
       }
-    </c-row>
-  </c-card-body>
-</c-card>
+    </c-card>
+  </c-col>
+</c-row>

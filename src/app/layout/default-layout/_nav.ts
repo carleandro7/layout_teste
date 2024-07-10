@@ -9,7 +9,7 @@ export const navItems: INavData[] = [
   },
 
   {
-    name: 'Components',
+    name: 'Componentes',
     title: true
   },
 
@@ -19,20 +19,20 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-description' },
     children: [
       {
-        name: 'Buttons',
+        name: 'Listagem',
         url: '/buttons/buttons',
         icon: 'nav-icon-bullet'
       },
-      {
-        name: 'Button groups',
-        url: '/buttons/button-groups',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'Dropdowns',
-        url: '/buttons/dropdowns',
-        icon: 'nav-icon-bullet'
-      }
+      // {
+      //   name: 'Button groups',
+      //   url: '/buttons/button-groups',
+      //   icon: 'nav-icon-bullet'
+      // },
+      // {
+      //   name: 'Dropdowns',
+      //   url: '/buttons/dropdowns',
+      //   icon: 'nav-icon-bullet'
+      // }
     ]
   },
   {
@@ -41,45 +41,15 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-user' },
     children: [
       {
-        name: 'Form Control',
+        name: 'Cadastro',
         url: '/forms/form-control',
         icon: 'nav-icon-bullet'
       },
       {
-        name: 'Select',
+        name: 'Listagem',
         url: '/forms/select',
         icon: 'nav-icon-bullet'
       },
-      {
-        name: 'Checks & Radios',
-        url: '/forms/checks-radios',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'Range',
-        url: '/forms/range',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'Input Group',
-        url: '/forms/input-group',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'Floating Labels',
-        url: '/forms/floating-labels',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'Layout',
-        url: '/forms/layout',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'Validation',
-        url: '/forms/validation',
-        icon: 'nav-icon-bullet'
-      }
     ]
   },
   {
@@ -93,24 +63,24 @@ export const navItems: INavData[] = [
     url: '/icons',
     children: [
       {
-        name: 'CoreUI Free',
+        name: 'Emissão',
         url: '/icons/coreui-icons',
         icon: 'nav-icon-bullet',
-        badge: {
-          color: 'success',
-          text: 'FREE'
-        }
+        // badge: {
+        //   color: 'success',
+        //   text: 'FREE'
+        // }
       },
-      {
-        name: 'CoreUI Flags',
-        url: '/icons/flags',
-        icon: 'nav-icon-bullet'
-      },
-      {
-        name: 'CoreUI Brands',
-        url: '/icons/brands',
-        icon: 'nav-icon-bullet'
-      }
+      // {
+      //   name: 'CoreUI Flags',
+      //   url: '/icons/flags',
+      //   icon: 'nav-icon-bullet'
+      // },
+      // {
+      //   name: 'CoreUI Brands',
+      //   url: '/icons/brands',
+      //   icon: 'nav-icon-bullet'
+      // }
     ]
   },
   {

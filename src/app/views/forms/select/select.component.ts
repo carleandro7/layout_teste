@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DocsExampleComponent } from '@docs-components/public-api';
+import { BaseService, DocsExampleComponent, TabelaComponent } from '@docs-components/public-api';
 import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, FormSelectDirective } from '@coreui/angular';
 
 @Component({
@@ -8,10 +8,10 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
     templateUrl: './select.component.html',
     styleUrls: ['./select.component.scss'],
     standalone: true,
-    imports: [RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, DocsExampleComponent, FormSelectDirective, ReactiveFormsModule]
+    imports: [TabelaComponent,RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, DocsExampleComponent, FormSelectDirective, ReactiveFormsModule]
 })
 export class SelectComponent {
 
-  constructor() { }
+  constructor(protected BaseService: BaseService) { }
 
 }

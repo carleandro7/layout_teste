@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { IconDirective, IconSetService } from '@coreui/icons-angular';
 import { brandSet, flagSet, freeSet } from '@coreui/icons';
-import { CardBodyComponent, CardComponent, CardHeaderComponent, ColComponent, RowComponent } from '@coreui/angular';
+import { ButtonModule, CardBodyComponent, CardComponent, CardHeaderComponent, ColComponent, FormModule, RowComponent } from '@coreui/angular';
 import { DocsLinkComponent } from '@docs-components/public-api';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   templateUrl: 'coreui-icons.component.html',
@@ -17,42 +18,23 @@ import { DocsLinkComponent } from '@docs-components/public-api';
     ColComponent,
     DocsLinkComponent,
     IconDirective,
-    RowComponent
+    RowComponent,
+    FormModule,
+    FormsModule,
+    ButtonModule
   ]
 })
-export class CoreUIIconsComponent implements OnInit {
-  public title = 'CoreUI Icons';
-  public icons!: [string, string[]][];
+export class CoreUIIconsComponent {
 
-  constructor(
-    private route: ActivatedRoute, public iconSet: IconSetService
-  ) {
-    iconSet.icons = { ...freeSet, ...brandSet, ...flagSet };
-  }
+  dataInicio: string = '';
+  dataFim: string = '';
+  tipoRelatorio: string = 'financeiro';
+  relatorioGerado: boolean = false;
+  conteudoRelatorio: string = '';
 
-  ngOnInit() {
-    const path = this.route?.routeConfig?.path;
-    let prefix = 'cil';
-    if (path === 'coreui-icons') {
-      this.title = `${this.title} - Free`;
-      prefix = 'cil';
-    } else if (path === 'brands') {
-      this.title = `${this.title} - Brands`;
-      prefix = 'cib';
-    } else if (path === 'flags') {
-      this.title = `${this.title} - Flags`;
-      prefix = 'cif';
-    }
-    this.icons = this.getIconsView(prefix);
-  }
-
-  toKebabCase(str: string) {
-    return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
-  }
-
-  getIconsView(prefix: string) {
-    return Object.entries(this.iconSet.icons).filter((icon) => {
-      return icon[0].startsWith(prefix);
-    });
+  gerarRelatorio() {
+    // Simulação de geração de relatório. Aqui você pode adicionar lógica para gerar e obter o relatório real.
+    this.relatorioGerado = true;
+    this.conteudoRelatorio = `Relatório ${this.tipoRelatorio.toUpperCase()} gerado com sucesso para o período de ${this.dataInicio} a ${this.dataFim}.`;
   }
 }

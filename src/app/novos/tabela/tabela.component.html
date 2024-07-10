@@ -1,0 +1,29 @@
+<table cTable hover striped>
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      @for (item of colunas; track $index) {
+          <th scope="col">{{ item }}</th>
+        }
+        <th scope="col" style="text-align: center;">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of dados; track $index) {
+    <tr>
+      <th scope="row">{{ $index + 1 }}</th>
+      @for (coluna of colunas; track $index) {
+          <td>{{ item[coluna] }}</td>
+        }
+        <th scope="row" style="text-align: center;">
+            <button cButton color="primary" shape="rounded-pill" size="sm" (click)="editar(item)">
+                <svg cIcon name="cil-pen" size="sm"></svg>
+            </button>
+            <button cButton color="danger" shape="rounded-pill" size="sm" (click)="excluir(item)">
+                <svg cIcon name="cil-trash" size="sm" title="Numbered List Icon"></svg>
+            </button>
+        </th>
+    </tr>
+    }
+  </tbody>
+</table>
