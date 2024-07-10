@@ -30,7 +30,7 @@ export class FormControlsComponent {
       estado: '',
       cep: ''
     },
-    curso: '',
+    serie: '',
     status: 'Inscrito'
   };
 

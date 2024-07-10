@@ -14,7 +14,7 @@ export const navItems: INavData[] = [
   },
 
   {
-    name: 'Inscrições',
+    name: 'Funcionalidade 1',
     url: '/buttons',
     iconComponent: { name: 'cil-description' },
     children: [
@@ -36,7 +36,7 @@ export const navItems: INavData[] = [
     ]
   },
   {
-    name: 'Alunos',
+    name: 'Funcionalidade 2',
     url: '/forms',
     iconComponent: { name: 'cil-user' },
     children: [
@@ -58,7 +58,7 @@ export const navItems: INavData[] = [
     url: '/charts'
   },
   {
-    name: 'Relatórios',
+    name: 'Funcionalidade 3',
     iconComponent: { name: 'cil-notes' },
     url: '/icons',
     children: [
@@ -84,7 +84,7 @@ export const navItems: INavData[] = [
     ]
   },
   {
-    name: 'Notifications',
+    name: 'Funcionalidade 4',
     url: '/notifications',
     iconComponent: { name: 'cil-bell' },
     children: [
